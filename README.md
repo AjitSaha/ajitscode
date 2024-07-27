@@ -1,4 +1,4 @@
 # ajitscode
 this is my first Git Repository
 <br>
-Author-Ajit Saha
+Author-Ajit Saha(git)
