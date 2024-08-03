@@ -1,4 +1,4 @@
-class ArrayListgit 
+class Arrayobject
 {
     Object obj[]=new Object[10];
     int count=0;
@@ -22,7 +22,11 @@ class ArrayListgit
     }
     public void display()
     {
-        for(int i=0;i<obj.length;i++)
+        if(count==0){
+          System.out.println("empty list");
+          return;
+        }
+        for(int i=0;i<count();i++)
         {
             System.out.println(obj[i]);
         }
@@ -33,7 +37,17 @@ class ArrayListgit
     }
 
 }
-public class Arrayobject
+public class ArrayListgit 
 {
-    
+    public static void main(String[] args) {
+        Arrayobject a= new Arrayobject();
+        a.add(10);
+        a.add(20);
+        a.add(30);
+        a.add(40);
+        a.add(50);
+        System.out.println(a.count());
+        a.display();
+
+    }
 }
