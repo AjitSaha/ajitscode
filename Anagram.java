@@ -1,24 +1,21 @@
 public class Anagram {
     public static void main(String[] args) {
-        String a = "care";
-        String b = "race";
-        System.out.println(anagram(a, b) ? "angram" : "not angram");
+
+        int input = 10;
+        System.out.println(anagram(input));
 
     }
 
-    public static boolean anagram(String a, String b) {
-        int c = 0;
-        int d = 0;
-        for (int i = 0; i < a.length(); i++) {
-            c += a.charAt(i);
+    public static String anagram(int a) {
+
+        String s = "";
+        while (a > 0) {
+            int r = a % 2;
+            s = r+s;
+            a /= 2;
+
         }
-        for (int i = 0; i < b.length(); i++) {
-            d += b.charAt(i);
-        }
-        if (c == d)
-            return true;
-        else
-            return false;
+        return s;
     }
 
 }
