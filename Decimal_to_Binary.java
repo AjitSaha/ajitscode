@@ -1,9 +1,9 @@
-public class Anagram {
+public class  Decimal_to_Binary {
     public static void main(String[] args) {
 
         int input = 10;
         System.out.println(anagram(input));
-
+         
     }
 
     public static String anagram(int a) {
