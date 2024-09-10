@@ -3,9 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ajit Saha | Futuristic Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at 50% 50%, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #08fdd8;
+            font-size: 1.2rem;
+            margin: 0 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff007f;
+        }
+
+        .header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867289_960_720.jpg') no-repeat center center/cover;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .header h1 {
+            font-size: 5rem;
+            color: #08fdd8;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 20px #08fdd8;
+            animation: neonGlitch 1.5s infinite alternate;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes neonGlitch {
+            0% { text-shadow: 0 0 10px #08fdd8, 0 0 20px #08fdd8; }
+            100% { text-shadow: 0 0 30px #08fdd8, 0 0 60px #ff007f; }
+        }
+
+        .about-section, .projects-section, .skills-section, .contact-section {
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #08fdd8;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #ff007f;
+            margin: 20px auto 0;
+            animation: expandLine 1s ease-in-out;
+        }
+
+        @keyframes expandLine {
+            0% { width: 0; }
+            100% { width: 80px; }
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #b0bec5;
+            animation: textReveal 1.5s ease-in-out;
+        }
+
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .projects-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px;
+            width: 300px;
+            border-radius: 15px;
+            position: relative;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #08fdd8;
+        }
+
+        .project-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #08fdd8;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: #b0bec5;
+        }
+
+        .skills-section ul {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skills-section ul li {
+            list-style: none;
+            background: rgba(8, 253, 216, 0.2);
+            color: #08fdd8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px;
+            transition: 0.5s;
+            text-shadow: 0 0 10px #08fdd8;
+        }
+
+        .skills-section ul li:hover {
+            background: rgba(255, 0, 127, 0.5);
+            text-shadow: 0 0 20px #ff007f;
+        }
+
+        /* Futuristic contact section */
+.contact-section {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    padding: 50px;
+    text-align: center;
+    color: #ecf0f1;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    color: #f39c12;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    font-size: 1.2em;
+    margin-top: 30px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #f39c12;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-info a:hover {
+    color: #e74c3c;
+}
+
+.contact-info a::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #f39c12;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease-in-out;
+    width: 0;
+}
+
+.contact-info a:hover::after {
+    width: 100%;
+}
+
+.contact-section::before, .contact-section::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    border-radius: 50%;
+    animation: pulse 10s infinite ease-in-out;
+}
+
+.contact-section::before {
+    top: -100px;
+    left: -100px;
+}
+
+.contact-section::after {
+    bottom: -100px;
+    right: -100px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+        
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-family: 'Orbitron', sans-serif;
+        }
+    </style>
 </head>
 <body>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="header">
+        <div>
+            <h1>Ajit Saha</h1>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <h2>About Me</h2>
+        <p>Hi, I’m Ajit Saha, a tech enthusiast driven by a desire to push the boundaries of software development. With strong skills in Java, web development, and a research-oriented mindset, I am focused on creating futuristic and efficient solutions.</p>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-card">
+            <h3>Blood Donation System</h3>
+            <p>A platform that streamlines communication between users and donors, ensuring fast access to life-saving resources.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Travel & Tourism System</h3>
+            <p>An innovative travel management platform offering seamless bookings and personalized trip planning.</p>
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>MySQL</li>
+            <li>HTML/CSS</li>
+            <li>Hibernate</li>
+            <li>JavaScript</li>
+        </ul>
+    </section>
+
+   <section class="contact-section" id="contact">
+    <h2>Contact Me</h2>
     
+    <!-- Displaying Your Contact Details -->
+    <div class="contact-info">
+        <p><strong>Phone:</strong> +91 7978850353</p>
+        <p><strong>Email:</strong> <a href="mailto:sahaajit114@gmail.com">sahaajit114@gmail.com</a></p>
+    </div>
+</section>
+
+
+
+    <footer>
+        <p>&copy; 2024 Ajit Saha. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
